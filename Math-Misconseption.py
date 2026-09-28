@@ -1,12 +1,3 @@
-import pandas as pd 
-import numpy as np 
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-from transformers import AutoTokenizer, pipeline
-
-
-
-df =pd.read_csv('/kaggle/input/math-misconception/train.csv')
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
@@ -15,8 +6,9 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout
+from transformers import AutoTokenizer, pipeline
 
-
+df =pd.read_csv('/kaggle/input/math-misconception/train.csv')
 df = df.dropna(subset=['StudentExplanation', 'QuestionText'])
 
 
